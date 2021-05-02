@@ -47,3 +47,9 @@ Make sure you have python 3.8 installed
    ```sh
    python client.py http://localhost:8000
    ```
+
+### Running tests
+You can run the tests by running the following command in the project root
+   ```sh
+   pytest
+   ```
