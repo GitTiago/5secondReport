@@ -16,7 +16,7 @@ Make sure you have python 3.8 installed
 
 1. Install dependencies
    ```sh
-   pip install -r server_requirements.txt
+   pip install -r server-requirements.txt
    ```
 
 2. Run server
@@ -35,7 +35,7 @@ Make sure you have python 3.8 installed
 
 1. Install dependencies
    ```sh
-   pip install -r client_requirements.txt
+   pip install -r client-requirements.txt
    ```
 
 2. Run client application

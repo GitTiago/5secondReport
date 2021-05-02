@@ -1,0 +1,4 @@
+-r client-requirements.txt
+-r server-requirements.txt
+pytest
+pytest-asyncio
