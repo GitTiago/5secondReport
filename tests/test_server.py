@@ -14,9 +14,9 @@ def test_post_programs_success(client: TestClient):
     assert not os.path.exists(file_path)
 
     try:
-        test_programs = "a.exe,b.exe,4.exe"
+        test_programs = ["a.exe", "b.exe", "4.exe"]
 
-        response = client.post(f"/programs/{TEST_CLIENT_ID}", json=["a.exe,b.exe,4.exe"])
+        response = client.post(f"/programs/{TEST_CLIENT_ID}", json=test_programs)
         assert response.status_code == HTTPStatus.CREATED
         assert os.path.exists(file_path)
 
@@ -31,7 +31,7 @@ def test_post_programs_success(client: TestClient):
                                               EXPECTED_DATE_FORMAT)
                 assert test_beginning_timestamp.replace(microsecond=0) <= line_time
                 assert line_time <= datetime.now().replace(microsecond=0)
-                assert line[end_date_index+1:].strip() == test_programs
+                assert line[end_date_index+1:].strip() == ",".join(test_programs)
             assert n_lines == 1
     finally:
         if os.path.exists(file_path):
