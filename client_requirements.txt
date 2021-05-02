@@ -1,0 +1,3 @@
+requests
+asyncio
+psutil>=5.8
